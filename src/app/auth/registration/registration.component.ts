@@ -23,14 +23,13 @@ export class RegistrationComponent implements OnInit {
 
   }
 
+  // get f() { return this.myForm.controls; }
+
+
 
   savedata(data) {
     console.log(this.myForm);
     console.log(data);
-  }
-
-  print(){
-    console.log()
   }
 
 }

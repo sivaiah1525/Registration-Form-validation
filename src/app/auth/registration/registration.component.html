@@ -38,20 +38,19 @@
                 <input type="password" placeholder="******" formControlName="password" (input)="print()">
                 <span *ngIf="myForm.controls.password.invalid && myForm.controls.password.touched ">please Enter password</span>
                 <!-- <span *ngIf="myForm.controls.password.error.minLength">password must be 6 </span> -->
-                {{myForm.controls.password.error.minLength}}
             </div>
             <!-- Repeat Password  -->
             <div>
                 <label for="psw-repeat"><b>Repeat Password</b></label>
                 <input type="password" placeholder="Repeat ******" formControlName="cfmpassword">
                 <span *ngIf="myForm.controls.cfmpassword.invalid && myForm.controls.cfmpassword.touched ">please Enter cfm-password</span>
-                <span *ngIf="myForm.controls.password !== myForm.controls.cfmpassword ">password not matched</span>
+                <span *ngIf="myForm.controls.password !== myForm.controls.cfmpassword ==  myForm.controls.cfmpassword.touched ">password not matched</span>
                 <hr>
                 <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
             </div>
             <!-- Register button  -->
             <div>
-                <button title="submit" class="registerbtn">Register</button>
+                <button title="submit" [disabled]="myForm.invalid" class="registerbtn">Register</button>
             </div>
             <!-- Already have an account?  -->
             <div class="container signin">
